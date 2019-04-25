@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/usr/bin/env bash
 INPUT=$HOME"/Videos/source.mp4"
 OUTPUT="output.png"
 rm $OUTPUT
