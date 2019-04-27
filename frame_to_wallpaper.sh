@@ -83,7 +83,7 @@ esac
 done
 
 # Gather information on source file.
-METADATA=$(ffprobe -select_streams v -show_streams ~/Videos/source.mp4 2> /dev/null)
+METADATA=$(ffprobe -select_streams v -show_streams $INPUT 2> /dev/null)
 FRAMES=$(echo "$METADATA" | grep nb_frames | cut --delimiter="=" -f 2)
 FRAMERATE=$(echo "$METADATA" | grep avg_frame_rate | cut --delimiter="=" -f 2)
 print_if_verbose "$INPUT contains $FRAMES frame(s) at the rate of $FRAMERATE FPS." 3
