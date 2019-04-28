@@ -97,9 +97,9 @@ TIMESTAMP=$(printf "%02d:%02d:%02d" $HOURS $MINUTES $SECONDS)
 print_if_verbose "Using frame #$FRAME, at timestamp $TIMESTAMP." 1
 
 if [[ $KEEP_FRAME -eq 0 ]]; then
-FRAME_FILE="$FRAME_LOCATION/temp_$FRAME"
+	FRAME_FILE="$FRAME_LOCATION/temp_$FRAME"
 else
-FRAME_FILE="$FRAME_LOCATION/$FRAME.png"
+	FRAME_FILE="$FRAME_LOCATION/$FRAME.png"
 fi
 
 ffmpeg -ss $HOURS:$MINUTES:$SECONDS -i $INPUT  -vframes 1 -f image2 $FRAME_FILE 2> /dev/null
@@ -110,7 +110,7 @@ print_if_verbose "Replaced wallpaer." 2
 
 # Remove frame, unless specified otherwise.
 if [[ $KEEP_FRAME -eq 0 ]]; then
-rm $FRAME_FILE
-print_if_verbose "Removed frame file." 2 
+	rm $FRAME_FILE
+	print_if_verbose "Removed frame file." 2 
 fi
 
